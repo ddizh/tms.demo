@@ -58,3 +58,4 @@ Please note that Aspire doesn't force us to use any tooling for app/infrastructu
 - Move event consumer into its own service/process.
 - Pagination for GetAllTasks endpoint.
 - Optimistic concurrency handling.
+- Add real integration/unit tests.
