@@ -2,11 +2,11 @@ using TMS.ServiceDefaults;
 
 namespace TMS.Tests.Integration;
 
-public class IntegrationTest1 : IClassFixture<AppHostFixture>
+public class ApiIntegrationTests : IClassFixture<AppHostFixture>
 {
     private readonly AppHostFixture _appHostFixture;
 
-    public IntegrationTest1(AppHostFixture appHostFixture)
+    public ApiIntegrationTests(AppHostFixture appHostFixture)
     {
         _appHostFixture = appHostFixture;
 

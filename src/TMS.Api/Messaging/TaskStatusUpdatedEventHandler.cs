@@ -2,12 +2,12 @@ using TMS.Messaging.Contracts;
 
 namespace TMS.Api.Messaging;
 
-public sealed class TaskStatusUpdatedEventHandler
+public sealed class TaskCompletedEventHandler
 {
-    public void Handle(TaskStatusUpdatedEvent @event, ILogger<TaskStatusUpdatedEventHandler> logger)
+    public void Handle(TaskCompletedEvent @event, ILogger<TaskCompletedEventHandler> logger)
     {
         logger.LogInformation(
-            "Handling {EventName}. Task id: {TaskId}, old status: {OldStatus}, new status: {NewStatus}",
-            nameof(TaskStatusUpdatedEvent), @event.Args.TaskId, @event.Args.OldStatus, @event.Args.NewStatus);
+            "Handling {EventName}. Task with id: {TaskId} has been completed on {CompletedOn}",
+            nameof(TaskCompletedEvent), @event.Args.TaskId, @event.Args.CompletedOn);
     }
 }

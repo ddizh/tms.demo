@@ -75,16 +75,18 @@ public class TaskService(TmsDbContext dbContext, IMessageBus messageBus, ILogger
             return Result.Fail($"Task with id {id} has not been updated.");
         }
 
-        await messageBus.PublishAsync(new TaskStatusUpdatedEvent
+        if (newStatus == TaskEntityStatus.Completed)
         {
-            Args = new TaskStatusUpdatedEventArgs
+            await messageBus.PublishAsync(new TaskCompletedEvent
             {
-                TaskId = entity.Id, 
-                OldStatus = (int)oldStatus, 
-                NewStatus = (int)newStatus,
-                CreatedAt = DateTime.UtcNow
-            }
-        });
+                Args = new TaskCompletedEventArgs
+                {
+                    TaskId = entity.Id, 
+                    CreatedAt = DateTime.UtcNow,
+                    CompletedOn = DateTime.UtcNow
+                }
+            }); 
+        }
 
         return Result.Ok();
     }

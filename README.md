@@ -54,9 +54,10 @@ Please note that Aspire doesn't force us to use any tooling for app/infrastructu
 - Use [transactional outbox pattern](https://wolverinefx.net/guide/durability/) for status update event to ensure data
   consistency.
 - If tasks can only transition from one state into another, then there is no need for us to take any user inputs at all.
-  We could just expose the 'ProgressTaskStatus' endpoint and update it's status internally without relying on user
+  We could just expose the 'ProgressTaskStatus' endpoint and update its status internally without relying on user
   input.
 - Move event consumer into its own service/process.
 - Pagination for GetAllTasks endpoint.
 - Optimistic concurrency handling.
 - Add real integration/unit tests.
+- Consider adding correlation/causation identifiers to events.
