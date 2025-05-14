@@ -1,4 +1,4 @@
-namespace TMS.DataAccess.Entities.Task;
+namespace TMS.DataAccess.Entities;
 
 public enum TaskEntityStatus
 {

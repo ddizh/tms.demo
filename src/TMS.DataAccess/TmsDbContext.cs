@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-using TMS.DataAccess.Entities.Task;
+using TMS.DataAccess.Entities;
 
 namespace TMS.DataAccess;
 

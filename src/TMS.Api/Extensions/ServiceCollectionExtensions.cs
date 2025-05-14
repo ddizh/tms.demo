@@ -2,8 +2,12 @@ using System.Reflection;
 
 using Asp.Versioning;
 
+using FluentValidation;
+
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
+using TMS.Api.Dto.Requests;
+using TMS.Api.Dto.Validators;
 using TMS.Api.Endpoints;
 
 namespace TMS.Api.Extensions;
@@ -35,6 +39,7 @@ public static class ServiceCollectionExtensions
             });
 
         services.AddEndpointsApiExplorer();
+        services.AddValidators();
     }
 
     public static void UseApiEndpoints(this WebApplication app)
@@ -49,6 +54,12 @@ public static class ServiceCollectionExtensions
             .WithApiVersionSet(apiVersionSet);
 
         app.MapEndpoints(versionedGroup);
+    }
+
+    private static void AddValidators(this IServiceCollection services)
+    {
+        services.AddScoped<IValidator<CreateTaskRequestModel>, CreateTaskRequestModelValidator>();
+        services.AddScoped<IValidator<UpdateTaskStatusRequestModel>, UpdateTaskRequestModelValidator>();
     }
 
     private static void MapEndpoints(this WebApplication app, RouteGroupBuilder builder)

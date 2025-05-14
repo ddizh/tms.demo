@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace TMS.DataAccess.Entities.Task;
+namespace TMS.DataAccess.Entities;
 
 public class TaskEntityConfiguration: IEntityTypeConfiguration<TaskEntity>
 {

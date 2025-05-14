@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Asp.Versioning.Http" Version="8.1.0" />
     <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
+    <PackageReference Include="FluentValidation" Version="12.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.5">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -16,10 +17,10 @@
     </PackageReference>
     <PackageReference Include="Riok.Mapperly" Version="4.2.1" />
     <PackageReference Include="Scalar.AspNetCore" Version="2.3.0" />
+    <PackageReference Include="WolverineFx.RabbitMQ" Version="3.13.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TMS.Aspire.Shared\TMS.Aspire.Shared.csproj" />
     <ProjectReference Include="..\TMS.ServiceDefaults\TMS.ServiceDefaults.csproj" />
     <ProjectReference Include="..\TMS.Domain\TMS.Domain.csproj" />
   </ItemGroup>

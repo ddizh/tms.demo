@@ -14,7 +14,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMS.Domain", "src\TMS.Domai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMS.DataAccess", "src\TMS.DataAccess\TMS.DataAccess.csproj", "{2FED6B3E-6D2B-4FAC-9859-4126CD10734D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMS.Aspire.Shared", "src\TMS.Aspire.Shared\TMS.Aspire.Shared.csproj", "{1F814926-D75E-4FC5-B5CA-82B0D789F8C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMS.Messaging.Contracts", "src\TMS.Messaging.Contracts\TMS.Messaging.Contracts.csproj", "{DFAB4494-35F4-4221-92FC-B807F0ED4E52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,10 +42,10 @@ Global
 		{2FED6B3E-6D2B-4FAC-9859-4126CD10734D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FED6B3E-6D2B-4FAC-9859-4126CD10734D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FED6B3E-6D2B-4FAC-9859-4126CD10734D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1F814926-D75E-4FC5-B5CA-82B0D789F8C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1F814926-D75E-4FC5-B5CA-82B0D789F8C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1F814926-D75E-4FC5-B5CA-82B0D789F8C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1F814926-D75E-4FC5-B5CA-82B0D789F8C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFAB4494-35F4-4221-92FC-B807F0ED4E52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFAB4494-35F4-4221-92FC-B807F0ED4E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFAB4494-35F4-4221-92FC-B807F0ED4E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFAB4494-35F4-4221-92FC-B807F0ED4E52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +56,5 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{C43DFB45-152D-4F5B-ADDF-DC005C9A9756} = {F350E05F-5338-40DA-9DC4-5F74E4E73DB7}
 		{EDEFAAC2-7276-4DB9-AAFE-820EEE27EC02} = {F350E05F-5338-40DA-9DC4-5F74E4E73DB7}
-		{1F814926-D75E-4FC5-B5CA-82B0D789F8C8} = {F350E05F-5338-40DA-9DC4-5F74E4E73DB7}
 	EndGlobalSection
 EndGlobal

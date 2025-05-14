@@ -16,8 +16,7 @@ public static class WebApplicationExtensions
         {
             options.WithTitle("Task Management System API")
                 .WithDarkMode(true)
-                .WithDarkModeToggle(false)
-                .WithDownloadButton(false);
+                .WithDarkModeToggle(false);
         });
 
         app.MapGet("/", () => Results.Redirect("/api-reference"))

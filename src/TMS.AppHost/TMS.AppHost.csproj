@@ -13,11 +13,12 @@
   <ItemGroup>
     <PackageReference Include="Aspire.Hosting.AppHost" Version="9.2.1" />
     <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.2.1" />
+    <PackageReference Include="Aspire.Hosting.RabbitMQ" Version="9.2.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\TMS.Api\TMS.Api.csproj" />
-    <ProjectReference Include="..\TMS.Aspire.Shared\TMS.Aspire.Shared.csproj" IsAspireProjectResource="false" />
+    <ProjectReference Include="..\TMS.ServiceDefaults\TMS.ServiceDefaults.csproj" IsAspireProjectResource="false"/>
   </ItemGroup>
 
 </Project>
