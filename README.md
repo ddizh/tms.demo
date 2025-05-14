@@ -32,6 +32,18 @@ A simple task management application which consists of:
 
 The default username/password for RabbitMQ dashboard is `admin/admin`.
 
+## Docker compose
+
+The docker compose inside `src/TMS.Aspire` (along with the .env file) is generated with `aspire-cli` dotnet tool and is
+a reflection of the app model defined in the host project.
+
+In order to generate the file, first install the aspire-cli tool:
+
+```dotnet tool install -g aspire.cli --prerelease```
+
+Then simply do `aspire publish` from `src/TMS.Aspire` project directory. The output of that command is a `docker-compose.yaml` and `.env` files.
+Please note that Aspire doesn't force us to use any tooling for app/infrastructure deployments, everything can still be done the old way.
+
 ## Things to consider / improve
 
 - Separate project for ef migrations should

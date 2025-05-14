@@ -11,6 +11,8 @@ _ = builder.AddProject<Projects.TMS_Api>(KnownResources.ApiResourceName)
     .WaitFor(db)
     .WaitFor(messageBus);
 
+builder.AddDockerComposePublisher();
+
 builder.Build().Run();
 
 return;

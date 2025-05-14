@@ -1,0 +1,45 @@
+services:
+  postgres:
+    image: "docker.io/library/postgres:17.2"
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: "scram-sha-256"
+      POSTGRES_INITDB_ARGS: "--auth-host=scram-sha-256 --auth-local=scram-sha-256"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+    ports:
+      - "8000:5432"
+    networks:
+      - "aspire"
+  messagebus:
+    image: "docker.io/library/rabbitmq:4.0-management"
+    environment:
+      RABBITMQ_DEFAULT_USER: "${RABBITMQ_USERNAME}"
+      RABBITMQ_DEFAULT_PASS: "${RABBITMQ_PASSWORD}"
+    ports:
+      - "8001:5672"
+      - "8002:15672"
+    networks:
+      - "aspire"
+  api:
+    image: "${API_IMAGE}"
+    environment:
+      OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES: "true"
+      OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES: "true"
+      OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY: "in_memory"
+      ASPNETCORE_FORWARDEDHEADERS_ENABLED: "true"
+      HTTP_PORTS: "8003"
+      ConnectionStrings__tms-db: "Host=postgres;Port=5432;Username=postgres;Password=${POSTGRES_PASSWORD};Database=tms-db"
+      ConnectionStrings__messagebus: "amqp://${RABBITMQ_USERNAME}:${RABBITMQ_PASSWORD}@messagebus:5672"
+    ports:
+      - "8004:8003"
+      - "8006:8005"
+    depends_on:
+      postgres:
+        condition: "service_started"
+      messagebus:
+        condition: "service_started"
+    networks:
+      - "aspire"
+networks:
+  aspire:
+    driver: "bridge"
