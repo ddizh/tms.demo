@@ -19,7 +19,7 @@ A simple task management application which consists of:
 **TMS.Api** – CRUD endpoints, OpenAPI reference  
 **TMS.Domain** – domain models and business logic  
 **TMS.DataAccess** – ef db context, migrations and entity models   
-**TMS.Messaging.Contracts** – shared event contracts
+**TMS.Messaging.Contracts** – shared event contracts  
 **TMS.Tests.Integration** – very basic setup for integration tests with .NET Aspire
 
 ## Prerequisites
